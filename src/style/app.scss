@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+$color-light-blue: #d7e0ff;
+$color-dark-blue: #1e213f;
+$color-dark-blue-2: #161932;
+$color-white: #fff;
+$color-light-grey: #eff1fa;
+$color-light-red:rgb(253, 79, 79);
+$color-ice-blue:rgb(106, 235, 255);
+$color-light-purple:rgba(120, 2, 255);
+
+
+*{  
+    
+    appearance: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.App{
+    background-color: $color-dark-blue;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .switcher{
+        background-color: $color-dark-blue-2;
+        width: 350px;
+        height: 65px;
+        border-radius: 45px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 8px;
+        position: relative;
+        .switch{  
+            border: none;
+            outline: none;      
+            background-color: $color-dark-blue-2;
+            color: white;
+            border-radius: 25px;
+            opacity: 0.7;
+            height: 80%;
+            width: 30%;
+            cursor: pointer;
+            z-index: 3;
+            &:hover{
+                opacity: 1;
+            }
+            &.active{
+                
+                width: 30%;
+                height: 80%;
+                opacity: 1;
+                color: black;
+                &.red{
+                    background-color:$color-light-red;     
+                }
+                &.blue{
+                    background-color:$color-ice-blue;     
+                }
+                &.purple{
+                    background-color:$color-light-purple;     
+                }
+            }
+        }
+        .warning-popup{
+            position: absolute;
+            font-weight: 700;
+            background-color: white;
+            z-index: 4;
+            padding: 60px 60px;
+            border-radius: 25px;
+            top:460px
+        }
+
+    }
+    .Timer{
+        height: 420px;
+        width: 420px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+        border-radius: 50%;
+        color: white;
+        background-image: linear-gradient(to bottom right, #0e112a, #2e325a);
+        box-shadow: -5rem -5rem 10rem 0 #272c5a, 5rem 5rem 10rem 0 #121530;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .watch{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $color-dark-blue-2;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+
+            .time{
+                z-index: 5;
+                font-size: 4.5rem;
+                letter-spacing: 3px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                .clock{
+                    margin-bottom: 25px;
+                    font-weight: 800;
+                }
+                button{
+                    color: white;
+                    border: none;
+                    background-color: $color-dark-blue-2;
+                    outline: none;
+                    font-size: 1.3rem;
+                    letter-spacing: 8px;
+                    
+                    
+                }
+
+            }
+            
+        }
+        
+    }
+    .settings{
+        color: white;
+        opacity: 0.5;
+        cursor: pointer;
+        height: 28px;
+        
+        &:hover{
+            opacity: 1;
+
+        }      
+    }
+    .setting-popup{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 6;
+        h4{
+            letter-spacing: 3px;
+        }
+        
+        .card{
+            background-color: white;
+            width: 588px;
+            height: 470px;
+            border-radius: 25px;
+            .setting{
+                padding: 15px 25px;
+                &.header{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin: 20px;
+                    .close{
+                        opacity: 0.5;
+                        cursor: pointer;
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                }
+                &.time{
+                    .btn{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        margin: 25px 0;
+                        .timeButton{
+                            .title{
+                                font-size: 0.7rem;
+                                font-weight: 800;
+                                color: rgb(120, 120, 120);
+                                margin-bottom: 5px;
+                            }
+                            .field{
+                                height: 50px;
+                                width: 120px;
+                                background-color:rgb(187, 187, 187); ;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-around;
+                                align-items: center;
+                                border-radius: 15px;
+                                .time{
+                                    font-size: 1rem;
+                                }
+                                .ıcons{
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-around;
+                                    align-items: center;
+                                    .outline{
+                                        opacity: 0.5;
+                                        cursor: pointer;
+                                        &:hover{
+                                            opacity: 1;
+                                        }
+                                    }
+                                }                                
+                            }
+                        }
+                    }
+                }
+                &.color{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .picks{
+                        display: flex;
+                        flex-direction: row;
+                        .select{
+                            position: relative;
+                            margin-right: 10px;
+                            .pick{
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                
+                                &:hover{
+                                    outline: 1px solid lightblue;
+                                    outline-offset: 5px;
+                                }
+                            }
+                            .check{
+                                position: absolute;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+                    }
+                }
+                &.font{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-top:25px;
+                    .picks{
+                        display: flex;
+                        flex-direction: row;
+                        .pick{
+                            margin-right: 10px;
+                            font-weight: bold;
+                            background-color:rgb(239, 239, 239);
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            &.active{
+                                background-color: #161932;
+                                color: white;
+                            }              
+                            &:hover{
+                                outline: 1px solid lightblue;
+                                outline-offset: 5px;
+                            }
+                        }
+                    }
+                    
+            }
+        }
+            
+        }
+    }
+}

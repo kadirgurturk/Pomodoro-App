@@ -1,0 +1,256 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+* {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: #1e213f;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App .switcher {
+  background-color: #161932;
+  width: 350px;
+  height: 65px;
+  border-radius: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  position: relative;
+}
+.App .switcher .switch {
+  border: none;
+  outline: none;
+  background-color: #161932;
+  color: white;
+  border-radius: 25px;
+  opacity: 0.7;
+  height: 80%;
+  width: 30%;
+  cursor: pointer;
+  z-index: 3;
+}
+.App .switcher .switch:hover {
+  opacity: 1;
+}
+.App .switcher .switch.active {
+  width: 30%;
+  height: 80%;
+  opacity: 1;
+  color: black;
+}
+.App .switcher .switch.active.red {
+  background-color: rgb(253, 79, 79);
+}
+.App .switcher .switch.active.blue {
+  background-color: rgb(106, 235, 255);
+}
+.App .switcher .switch.active.purple {
+  background-color: rgb(120, 2, 255);
+}
+.App .switcher .warning-popup {
+  position: absolute;
+  font-weight: 700;
+  background-color: white;
+  z-index: 4;
+  padding: 60px 60px;
+  border-radius: 25px;
+  top: 460px;
+}
+.App .Timer {
+  height: 420px;
+  width: 420px;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  color: white;
+  background-image: linear-gradient(to bottom right, #0e112a, #2e325a);
+  box-shadow: -5rem -5rem 10rem 0 #272c5a, 5rem 5rem 10rem 0 #121530;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App .Timer .watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161932;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+}
+.App .Timer .watch .time {
+  z-index: 5;
+  font-size: 4.5rem;
+  letter-spacing: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.App .Timer .watch .time .clock {
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+.App .Timer .watch .time button {
+  color: white;
+  border: none;
+  background-color: #161932;
+  outline: none;
+  font-size: 1.3rem;
+  letter-spacing: 8px;
+}
+.App .settings {
+  color: white;
+  opacity: 0.5;
+  cursor: pointer;
+  height: 28px;
+}
+.App .settings:hover {
+  opacity: 1;
+}
+.App .setting-popup {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 6;
+}
+.App .setting-popup h4 {
+  letter-spacing: 3px;
+}
+.App .setting-popup .card {
+  background-color: white;
+  width: 588px;
+  height: 470px;
+  border-radius: 25px;
+}
+.App .setting-popup .card .setting {
+  padding: 15px 25px;
+}
+.App .setting-popup .card .setting.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+.App .setting-popup .card .setting.header .close {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.App .setting-popup .card .setting.header .close:hover {
+  opacity: 1;
+}
+.App .setting-popup .card .setting.time .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+.App .setting-popup .card .setting.time .btn .timeButton .title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: rgb(120, 120, 120);
+  margin-bottom: 5px;
+}
+.App .setting-popup .card .setting.time .btn .timeButton .field {
+  height: 50px;
+  width: 120px;
+  background-color: rgb(187, 187, 187);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 15px;
+}
+.App .setting-popup .card .setting.time .btn .timeButton .field .time {
+  font-size: 1rem;
+}
+.App .setting-popup .card .setting.time .btn .timeButton .field .ıcons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.App .setting-popup .card .setting.time .btn .timeButton .field .ıcons .outline {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.App .setting-popup .card .setting.time .btn .timeButton .field .ıcons .outline:hover {
+  opacity: 1;
+}
+.App .setting-popup .card .setting.color {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.App .setting-popup .card .setting.color .picks {
+  display: flex;
+  flex-direction: row;
+}
+.App .setting-popup .card .setting.color .picks .select {
+  position: relative;
+  margin-right: 10px;
+}
+.App .setting-popup .card .setting.color .picks .select .pick {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.App .setting-popup .card .setting.color .picks .select .pick:hover {
+  outline: 1px solid lightblue;
+  outline-offset: 5px;
+}
+.App .setting-popup .card .setting.color .picks .select .check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.App .setting-popup .card .setting.font {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+.App .setting-popup .card .setting.font .picks {
+  display: flex;
+  flex-direction: row;
+}
+.App .setting-popup .card .setting.font .picks .pick {
+  margin-right: 10px;
+  font-weight: bold;
+  background-color: rgb(239, 239, 239);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.App .setting-popup .card .setting.font .picks .pick.active {
+  background-color: #161932;
+  color: white;
+}
+.App .setting-popup .card .setting.font .picks .pick:hover {
+  outline: 1px solid lightblue;
+  outline-offset: 5px;
+}/*# sourceMappingURL=app.css.map */
